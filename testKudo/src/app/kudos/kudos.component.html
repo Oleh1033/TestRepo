@@ -1,0 +1,37 @@
+<!-- <div class="jumbotron">
+  <h1>Angular Graph Tutorial</h1>
+  <p class="lead">This sample app shows how to use the Microsoft Graph API from Angular</p>
+  <div *ngIf="authService.authenticated; then welcomeUser else signInPrompt"></div>
+  <ng-template #welcomeUser>
+    <h4>Welcome {{ authService.user.displayName }}!</h4>
+    <p>Use the navigation bar at the top of the page to get started.</p>
+  </ng-template>
+  <ng-template #signInPrompt>
+    <a href="javascript:undefined" class="btn btn-primary btn-large" role="button" (click)="signIn()">Click here to sign in</a>
+  </ng-template>
+</div>
+-->
+
+
+<div class="container">
+  <h2>Kudos via dziecios z Bulerbynos</h2>
+  <div class="wyszukiwanie">
+    <br><h4>Wyszukaj Osobę</h4>
+    <input type="text" name="lname"><br><br>
+  </div>
+  <br>
+  <div class="przyciski">
+    <button type="button" class="btn btn-primary">Kreatywność</button>
+    <button type="button" class="btn btn-secondary">Energia</button>
+    <button type="button" class="btn btn-success">Zaufanie</button>
+    <button type="button" class="btn btn-danger">Rozwój</button>
+    <button type="button" class="btn btn-warning">Profesjonalizm</button>
+  </div>
+  <br>
+  <div class="textarea">
+    <h4>Wpisz Komentarz:</h4>
+    <textarea rows="4" cols="50">Komencik... </textarea>
+    <br>
+    <button type="button" class="btn btn-dark">Wyślij</button>
+  </div>
+</div>

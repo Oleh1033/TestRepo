@@ -1,0 +1,25 @@
+.container {
+    display: grid;
+    background-color: whitesmoke;
+    width: 600px;
+    
+  }
+
+  .przyciski {
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #E3E3E3;
+  }
+
+  .wyszukiwanie {
+    padding-left: 20px;
+    background-color: #E3E3E3;
+  }
+
+  .textarea {
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #E3E3E3;
+  }
