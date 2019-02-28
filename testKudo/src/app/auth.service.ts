@@ -50,7 +50,7 @@ export class AuthService {
       });
 
     // Temporary to display token in an error box
-   // if (result) this.alertsService.add('Token acquired', result);
+    // if (result) this.alertsService.add('Token acquired', result);
     return result;
   }
 
