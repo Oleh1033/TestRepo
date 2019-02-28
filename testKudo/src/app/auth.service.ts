@@ -16,9 +16,9 @@ export class AuthService {
   constructor(
     private msalService: MsalService,
     private alertsService: AlertsService) {
-  
+
     this.authenticated = this.msalService.getUser() != null;
-    this.getUser().then((user) => {this.user = user});
+    this.getUser().then((user) => { this.user = user });
   }
 
   // Prompt the user to sign in and
@@ -50,7 +50,7 @@ export class AuthService {
       });
 
     // Temporary to display token in an error box
-    if (result) this.alertsService.add('Token acquired', result);
+   // if (result) this.alertsService.add('Token acquired', result);
     return result;
   }
 

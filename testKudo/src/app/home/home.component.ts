@@ -8,12 +8,10 @@ import { AuthService } from '../auth.service'
 })
 export class HomeComponent implements OnInit {
 
-  
-
-  constructor( private authService : AuthService) { }
+  constructor(private authService: AuthService) { }
 
   ngOnInit() {
-    
+
   }
 
   async signIn(): Promise<void> {
