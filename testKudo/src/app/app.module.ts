@@ -15,6 +15,9 @@ import { AlertsComponent } from './alerts/alerts.component';
 import { MsalModule } from '@azure/msal-angular';
 import { OAuthSettings } from '../oauth';
 import { KudosComponent } from './kudos/kudos.component';
+import { ApiTestComponent } from './api-test/api-test.component';
+
+import { HttpClientModule } from '@angular/common/http';
 
 library.add(faExternalLinkAlt);
 library.add(faUserCircle);
@@ -25,13 +28,16 @@ library.add(faUserCircle);
     NavBarComponent,
     HomeComponent,
     AlertsComponent,
-    KudosComponent
+    KudosComponent,
+    ApiTestComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     FontAwesomeModule,
+    HttpClientModule,
     MsalModule.forRoot({
       clientID: OAuthSettings.appId
     })

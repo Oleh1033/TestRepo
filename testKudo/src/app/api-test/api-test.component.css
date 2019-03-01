@@ -1,0 +1,7 @@
+.container {
+    display: grid;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #E3E3E3;
+  }
