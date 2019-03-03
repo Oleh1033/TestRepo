@@ -4,6 +4,7 @@ import { Client } from '@microsoft/microsoft-graph-client';
 import { AuthService } from './auth.service';
 import { Event } from './event';
 import { AlertsService } from './alerts.service';
+import { User } from 'msal';
 
 @Injectable({
   providedIn: 'root'
@@ -45,6 +46,20 @@ export class GraphService {
       return result.value;
     } catch (error) {
       this.alertsService.add('Could not get events', JSON.stringify(error, null, 2));
+    }
+  }
+
+  async getPeople(): Promise<User[]> {
+    try {
+      let result =  await this.graphClient
+        .api('/me/people')
+        .select('displayName')
+        .orderby('displayName')
+        .get();
+
+      return result.value;
+    } catch (error) {
+      this.alertsService.add('Could not get people', JSON.stringify(error, null, 2));
     }
   }
 }
