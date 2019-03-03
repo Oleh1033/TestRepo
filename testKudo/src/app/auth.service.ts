@@ -78,11 +78,8 @@ export class AuthService {
 
     // Get the user from Graph (GET /me)
     let graphUser = await graphClient.api('/me').get();
-
-    let graphUsers = await graphClient.api('/me/people').get();
-    console.log(graphUsers);
-
     let user = new User();
+    
     user.displayName = graphUser.displayName;
     // Prefer the mail property, but fall back to userPrincipalName
     user.email = graphUser.mail || graphUser.userPrincipalName;

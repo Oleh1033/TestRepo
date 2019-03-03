@@ -54,7 +54,7 @@ export class GraphService {
       let result =  await this.graphClient
         .api('/me/people')
         .select('displayName')
-        .orderby('displayName')
+        .orderby('displayName ASC')
         .get();
 
       return result.value;

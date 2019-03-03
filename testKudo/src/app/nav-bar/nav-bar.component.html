@@ -14,15 +14,15 @@
           <a routerLink="/calendar" class="nav-link" routerLinkActive="active">Calendar</a>
         </li>
         <li *ngIf="authService.authenticated" class="nav-item">
-          <a routerLink="/kudos" class="nav-link" routerLinkActive="active">Kudos</a>
+          <a routerLink="/kudos" class="nav-link" routerLinkActive="active">Kudosy</a>
         </li>
       </ul>
       <ul class="navbar-nav justify-content-end">
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link" href="https://docs.microsoft.com/graph/overview" target="_blank">
             <fa-icon [icon]="[ 'fas', 'external-link-alt' ]" class="mr-1"></fa-icon>Docs
           </a>
-        </li>
+        </li> -->
         <li *ngIf="authService.authenticated" ngbDropdown placement="bottom-right" class="nav-item">
           <a ngbDropdownToggle id="userMenu" class="nav-link" href="javascript:undefined" role="button" aria-haspopup="true"
             aria-expanded="false">
