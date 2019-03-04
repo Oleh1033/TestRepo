@@ -3,6 +3,7 @@ export const OAuthSettings = {
     scopes: [
       "user.read",
       "calendars.read",
+      
     ]
   };
 
