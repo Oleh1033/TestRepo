@@ -4,6 +4,7 @@ import { MsalService } from '@azure/msal-angular';
 import { AlertsService } from './alerts.service';
 import { OAuthSettings } from '../oauth';
 import { User } from './user';
+import { ListUsers } from './listUsers';
 import { Client } from '@microsoft/microsoft-graph-client';
 
 @Injectable({
@@ -77,11 +78,16 @@ export class AuthService {
 
     // Get the user from Graph (GET /me)
     let graphUser = await graphClient.api('/me').get();
+    // https://graph.microsoft.com/v1.0/users/?$top=999&$Select=givenName,surName
+    let listUsers = await graphClient.api('me/people/?$top=9&$Select=givenName,surName').get();
 
     let user = new User();
     user.displayName = graphUser.displayName;
     // Prefer the mail property, but fall back to userPrincipalName
     user.email = graphUser.mail || graphUser.userPrincipalName;
+
+    let list = new ListUsers();
+    list.data = listUsers.data;
 
     return user;
   }

@@ -18,11 +18,11 @@ export class KudosComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   search(){
-    this.http.get('https://jsonplaceholder.typicode.com/users')
-    .subscribe((response) => {
-      this.response = response;
-      console.log(response + 'asd');
-    })
+ // //  this.http.get('https://jsonplaceholder.typicode.com/users')
+  //  .subscribe((response) => {
+  //    this.response = response;
+  //    console.log(response + 'asd');
+  //  })
   }
 
   ngOnInit() {
