@@ -6,9 +6,8 @@ import { CalendarComponent } from './calendar/calendar.component';
 import { KudosComponent } from './kudos/kudos.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
   { path: 'calendar', component: CalendarComponent },
-  { path: 'kudos', component: KudosComponent },
+  { path: '', component: KudosComponent },
 
 ];
 

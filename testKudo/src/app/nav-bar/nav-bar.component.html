@@ -7,15 +7,16 @@
     </button>
     <div class="collapse navbar-collapse" [class.show]="showNav" id="navbarCollapse">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a routerLink="/" class="nav-link" routerLinkActive="active">Home</a>
+        </li> -->
+        <li *ngIf="authService.authenticated" class="nav-item">
+          <a routerLink="/" class="nav-link" routerLinkActive="active">Kudosy</a>
         </li>
         <li *ngIf="authService.authenticated" class="nav-item">
           <a routerLink="/calendar" class="nav-link" routerLinkActive="active">Calendar</a>
         </li>
-        <li *ngIf="authService.authenticated" class="nav-item">
-          <a routerLink="/kudos" class="nav-link" routerLinkActive="active">Kudosy</a>
-        </li>
+        
       </ul>
       <ul class="navbar-nav justify-content-end">
         <!-- <li class="nav-item">
