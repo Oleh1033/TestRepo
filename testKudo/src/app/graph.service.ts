@@ -25,8 +25,7 @@ export class GraphService {
             done(reason, null);
           });
 
-        if (token)
-        {
+        if (token) {
           done(null, token);
         } else {
           done("Could not get an access token", null);
@@ -37,12 +36,12 @@ export class GraphService {
 
   async getEvents(): Promise<Event[]> {
     try {
-      let result =  await this.graphClient
+      let result = await this.graphClient
         .api('/me/events')
         .select('subject,organizer,start,end')
         .orderby('createdDateTime DESC')
         .get();
-    
+
       return result.value;
     } catch (error) {
       this.alertsService.add('Could not get events', JSON.stringify(error, null, 2));
@@ -51,7 +50,7 @@ export class GraphService {
 
   async getPeople(): Promise<User[]> {
     try {
-      let result =  await this.graphClient
+      let result = await this.graphClient
         .api('/me/people/?$top=999')
         .select('displayName')
         .orderby('displayName ASC')
