@@ -16,6 +16,8 @@ import { OAuthSettings } from '../oauth';
 import { CalendarComponent } from './calendar/calendar.component';
 import { KudosComponent } from './kudos/kudos.component';
 import { PeopleListComponent } from './people-list/people-list.component';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 library.add(faExternalLinkAlt);
 library.add(faUserCircle);
@@ -28,12 +30,14 @@ library.add(faUserCircle);
     AlertsComponent,
     CalendarComponent,
     KudosComponent,
-    PeopleListComponent
+    PeopleListComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
+    FormsModule,
+    ReactiveFormsModule,
     FontAwesomeModule,
     MsalModule.forRoot({
       clientID: OAuthSettings.appId
