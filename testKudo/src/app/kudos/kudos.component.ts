@@ -12,8 +12,11 @@ export class KudosComponent implements OnInit {
   
 
 
-  from = "alalalla"
-  message = "66556"
+  from = "oleh"
+  to = ""
+  value = "Kreatywność"
+  message = ""
+  segCompany = "billennium"
  
   constructor(private http: HttpClient) { 
   }
@@ -23,8 +26,14 @@ export class KudosComponent implements OnInit {
 
    sendKudos(){
          
-      // const body = {from: this.from, message: this.message};
-        const body = {"from":"zazazaza"}
+       const body = {
+          from: this.from,
+          message: this.message,
+          to : this.to ,
+          value : this.value ,
+          segCompany: this.segCompany
+        };
+    
        console.log(body)
 
 
