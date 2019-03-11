@@ -17,6 +17,9 @@ import { CalendarComponent } from './calendar/calendar.component';
 import { KudosComponent } from './kudos/kudos.component';
 import { PeopleListComponent } from './people-list/people-list.component';
 
+import { HttpClientModule }    from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+
 library.add(faExternalLinkAlt);
 library.add(faUserCircle);
 
@@ -32,8 +35,10 @@ library.add(faUserCircle);
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     NgbModule,
+    FormsModule,
     FontAwesomeModule,
     MsalModule.forRoot({
       clientID: OAuthSettings.appId

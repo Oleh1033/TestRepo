@@ -1,9 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import * as moment from 'moment-timezone';
-
-import { GraphService } from '../graph.service';
-import { Event, DateTimeTimeZone } from '../event';
-import { AlertsService } from '../alerts.service';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-calendar',
@@ -12,25 +8,22 @@ import { AlertsService } from '../alerts.service';
 })
 export class CalendarComponent implements OnInit {
 
-  private events: Event[];
+  records = {};
 
-  constructor(
-    private graphService: GraphService,
-    private alertsService: AlertsService) { }
+
+  constructor(private http: HttpClient) { 
+
+  }
+
 
   ngOnInit() {
-    this.graphService.getEvents()
-      .then((events) => {
-        this.events = events;
-      });
+    return this.http.get("http://4f1bce84.ngrok.io/api/kudos")
+    .subscribe(data => {
+      this.records = data;
+      console.log( this.records)
+    })
   }
 
-  formatDateTimeTimeZone(dateTime: DateTimeTimeZone): string {
-    try {
-      return moment.tz(dateTime.dateTime, dateTime.timeZone).format();
-    }
-    catch(error) {
-      this.alertsService.add('DateTimeTimeZone conversion error', JSON.stringify(error));
-    }
-  }
+
+ 
 }

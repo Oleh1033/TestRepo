@@ -1,17 +1,18 @@
-<h1>Calendar</h1>
+<h1>Received
+</h1>
 <table class="table">
   <thead>
-    <th scope="col">Organizer</th>
-    <th scope="col">Subject</th>
-    <th scope="col">Start</th>
-    <th scope="col">End</th>
+    <th scope="col">From</th>
+    <th scope="col">To</th>
+    <th scope="col">Value</th>
+    <th scope="col">Message</th>
   </thead>
   <tbody>
-    <tr *ngFor="let event of events">
-      <td>{{event.organizer.emailAddress.name}}</td>
-      <td>{{event.subject}}</td>
-      <td>{{formatDateTimeTimeZone(event.start) | date:'short' }}</td>
-      <td>{{formatDateTimeTimeZone(event.end) | date: 'short' }}</td>
+    <tr *ngFor="let event of records">
+      <td>{{event.from}}</td>
+      <td>{{event.to}}</td>
+      <td>{{event.value }}</td>
+      <td>{{event.message }}</td>
     </tr>
   </tbody>
 </table>

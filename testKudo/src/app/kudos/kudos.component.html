@@ -1,26 +1,14 @@
-<div class="row">
-  <div class="col-md-8 col-md-offset-2">
-    <form>
-      <div class="group-form">
-        <p class="lead">Search:</p>
-        <input type="email" id="email" name="email" ngModel class="form-control" placeholder="Search...">
-        <p class="lead" *ngIf = "selected">Name:</p>
-        <p class="lead">Select:</p>
-
-        <button class="btn btn-outline-warning">Zaufanie</button>
-        <button class="btn btn-outline-success">Kreatywność</button>
-        <button class="btn btn-outline-info">Energia</button>
-        <button class="btn btn-outline-primary">Rozwój</button>
-        <button class="btn btn-outline-danger">Profesjonalizm</button>
-
-        <p class="lead">Comment:</p>
-        <div class="form-group">
-          <textarea class="form-control" rows="4" id="comment"></textarea>
-        </div>
-
-        <button class="btn btn-basic" type="submit">Send</button>
-      </div>
-    </form>
-  </div>
-  <app-people-list></app-people-list>
+<div class="form-group">
+  <label>From</label>
+  <input class="form-control" name="username" [(ngModel)]="from" />
+  <p>{{from}}</p>
+</div>
+<div class="form-group">
+  <label>Message</label>
+  <input class="form-control" type="number" name="age" [(ngModel)]="message" />
+  <p>{{message}}</p>
+</div>
+<div class="form-group">
+  <button class="btn btn-default" (click)="sendKudos(user)">Отправить</button>
+</div>
  
