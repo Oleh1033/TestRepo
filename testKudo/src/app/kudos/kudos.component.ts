@@ -10,8 +10,10 @@ export class KudosComponent implements OnInit {
 
   powers = ["Zaufanie", "Kreatywność","Rozwój"]
   
-  from = ""
-  message = ""
+
+
+  from = "alalalla"
+  message = "66556"
  
   constructor(private http: HttpClient) { 
   }
@@ -21,9 +23,15 @@ export class KudosComponent implements OnInit {
 
    sendKudos(){
          
-       const body = {from: this.from, message: this.message};
+      // const body = {from: this.from, message: this.message};
+        const body = {"from":"zazazaza"}
        console.log(body)
-       return this.http.post(' https://4f1bce84.ngrok.io/api/kudos', body); 
+
+
+       return this.http.post('http://2a060803.ngrok.io/api/kudos', body)
+       .subscribe(data => {
+          console.log( data)
+          }) 
   
    }
 

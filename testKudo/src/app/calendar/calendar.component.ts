@@ -8,22 +8,16 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class CalendarComponent implements OnInit {
 
-  records = {};
-
+  kudos = {};
 
   constructor(private http: HttpClient) { 
-
   }
-
 
   ngOnInit() {
-    return this.http.get("http://4f1bce84.ngrok.io/api/kudos")
+    return this.http.get("http://2a060803.ngrok.io/api/kudos")
     .subscribe(data => {
-      this.records = data;
-      console.log( this.records)
+      this.kudos = data;
+      console.log( this.kudos)
     })
   }
-
-
- 
 }
