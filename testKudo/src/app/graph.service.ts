@@ -52,7 +52,7 @@ export class GraphService {
   async getPeople(): Promise<User[]> {
     try {
       let result =  await this.graphClient
-        .api('/me/people/?$top=999')
+        .api('/users')
         .select('displayName')
         .orderby('displayName ASC')
         .get();
