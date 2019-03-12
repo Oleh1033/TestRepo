@@ -10,13 +10,42 @@
 </div>
 
 <div class="form-group">
-  <label for="power">Value</label>
-  <select class="form-control" id="power" required>
-    <option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>
+  <label>Value</label>
+  <select class="form-control" name="value" [(ngModel)]="value">
+      <option  *ngFor="let comp of topics" [value]="comp">
+          {{comp}}
+      </option>
   </select>
 </div>
+
+<!-- <div class="form-group">
+  <label for="power">Value</label>
+  <select class="form-control" id="power" required>
+    <option *ngFor="let valu of values" [value]="value">{{valu}}</option>
+  </select>
+</div> -->
+
+<!-- <div>
+  <select name="value" [ngModel]="value">
+    <option [ngValue]="null">Choose a state</option>
+    <option *ngFor="let state from values" [ngValue]="value">
+      {{ state }}
+    </option>
+  </select> 
+</div> -->
+
+
+<!-- <form #f="ngForm">
+  <select name="state" [ngModel]="state">
+    <option [ngValue]="null">Choose a state</option>
+    <option *ngFor="let state of states" [ngValue]="state">
+      {{ state.name }}
+    </option>
+  </select>
+</form> -->
+
 
 <div class="form-group">
   <button class="btn btn-default" (click)="sendKudos(user)">Отправить</button>
 </div>
- 
+ <p>{{authService.user.displayName}}</p>

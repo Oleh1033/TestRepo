@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { AuthService } from '../auth.service';
+import { FormGroup } from '@angular/forms';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-kudos',
@@ -8,20 +11,29 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class KudosComponent implements OnInit {
 
-  powers = ["Zaufanie", "Kreatywność","Rozwój"]
-  
+  topics :any 
 
 
-  from = "oleh"
+  from = this.authService.user.displayName
   to = ""
-  value = "Kreatywność"
+  value = null
   message = ""
   segCompany = "billennium"
  
-  constructor(private http: HttpClient) { 
+  constructor(private http: HttpClient,
+    private authService: AuthService,
+    ) { 
   }
 
+
+
+
   ngOnInit() {
+    return this.http.get("http://a6691635.ngrok.io/api/values")
+    .subscribe(data => {
+      this.topics = data;
+      console.log( this.topics)
+    })
   } 
 
    sendKudos(){
@@ -37,10 +49,11 @@ export class KudosComponent implements OnInit {
        console.log(body)
 
 
-       return this.http.post('http://2a060803.ngrok.io/api/kudos', body)
+       return this.http.post('http://a6691635.ngrok.io/api/kudos', body)
        .subscribe(data => {
           console.log( data)
           }) 
+          
   
    }
 

@@ -14,7 +14,7 @@ export class CalendarComponent implements OnInit {
   }
 
   ngOnInit() {
-    return this.http.get("http://2a060803.ngrok.io/api/kudos")
+    return this.http.get("http://a6691635.ngrok.io/api/kudos")
     .subscribe(data => {
       this.kudos = data;
       console.log( this.kudos)
